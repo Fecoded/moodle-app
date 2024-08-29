@@ -161,7 +161,7 @@ $CFG->dboptions = array(
 // If you need both intranet and Internet access please read
 // http://docs.moodle.org/en/masquerading
 
-$CFG->wwwroot = 'https://moodle-app-tkj0.onrender.com';
+$CFG->wwwroot = 'https://moodle-app-tkj0.onrender.com/moodle';
 
 //=========================================================================
 // 3. DATA FILES LOCATION
