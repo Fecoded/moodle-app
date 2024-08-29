@@ -17,7 +17,9 @@ WORKDIR /var/www/html
 COPY . /var/www/html
 
 # Set the correct permissions for Moodle
-RUN chown -R www-data:www-data /var/www/html \
+RUN mkdir -p /var/www/moodledata \
+    && chown -R www-data:www-data /var/www/html \
+    && chown -R www-data:www-data /var/www/moodledata \
     && chmod -R 755 /var/www/html \
     && chmod -R 777 /var/www/moodledata
 
