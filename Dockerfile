@@ -18,7 +18,8 @@ COPY . /var/www/html
 
 # Set the correct permissions for Moodle
 RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html
+    && chmod -R 755 /var/www/html \
+    && chmod -R 777 /var/www/moodledata
 
 # Expose port 80 to the outside world
 EXPOSE 80
