@@ -17,11 +17,8 @@ WORKDIR /var/www/html
 COPY . /var/www/html
 
 # Set the correct permissions for Moodle
-RUN mkdir -p /var/www/moodledata \
-    && chown -R www-data:www-data /var/www/html \
-    && chown -R www-data:www-data /var/www/moodledata \
-    && chmod -R 755 /var/www/html \
-    && chmod -R 777 /var/www/moodledata
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html
 
 # Expose port 80 to the outside world
 EXPOSE 80

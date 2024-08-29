@@ -176,7 +176,7 @@ $CFG->wwwroot = 'https://moodle-app-tkj0.onrender.com';
 //
 // - On Windows systems you might specify something like 'c:\moodledata'
 
-$CFG->dataroot = '/var/www/moodledata';
+$CFG->dataroot = '/var/www/html';
 
 //=========================================================================
 // 4. DATA FILES PERMISSIONS
