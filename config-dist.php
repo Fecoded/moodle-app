@@ -40,7 +40,8 @@ $CFG = new stdClass();
 
 $CFG->dbtype = 'pgsql'; // 'pgsql', 'mariadb', 'mysqli', 'auroramysql', 'sqlsrv' or 'oci'
 $CFG->dblibrary = 'native'; // 'native' only at the moment
-$CFG->dbhost = 'localhost'; // eg 'localhost' or 'db.isp.com' or IP
+$CFG->dbhost = '127.0.0.1'; // eg 'localhost' or 'db.isp.com' or IP
+// $CFG->dbhost = '/var/lib/mysql/mysql.sock'; // eg 'localhost' or 'db.isp.com' or IP
 $CFG->dbname = 'moodle'; // database name, eg moodle
 $CFG->dbuser = 'username'; // your database username
 $CFG->dbpass = 'password'; // your database password
@@ -161,8 +162,7 @@ $CFG->dboptions = array(
 // If you need both intranet and Internet access please read
 // http://docs.moodle.org/en/masquerading
 
-// $CFG->wwwroot = 'http://example.com/moodle';
-$CFG->wwwroot = 'https://moodle-app-tkj0.onrender.com';
+$CFG->wwwroot = 'http://example.com/moodle';
 
 //=========================================================================
 // 3. DATA FILES LOCATION
@@ -177,8 +177,7 @@ $CFG->wwwroot = 'https://moodle-app-tkj0.onrender.com';
 //
 // - On Windows systems you might specify something like 'c:\moodledata'
 
-$CFG->dataroot = 'https://moodle-app-tkj0.onrender.com/moodledata';
-// $CFG->dataroot = '/var/www/html';
+$CFG->dataroot = '/home/example/moodledata';
 
 //=========================================================================
 // 4. DATA FILES PERMISSIONS
