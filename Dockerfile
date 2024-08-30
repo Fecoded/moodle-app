@@ -23,8 +23,5 @@ RUN mkdir -p /var/www/moodledata \
     && chmod -R 755 /var/www/html \
     && chmod -R 777 /var/www/moodledata
 
-# Expose port 80 to the outside world
-EXPOSE 80
-
 # Run Apache in the foreground
 CMD ["apache2-foreground"]
