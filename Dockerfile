@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install && apt-get install nano -y \
 RUN a2enmod rewrite
 
 # Create a custom php.ini file
-RUN echo "extension=intl" > /usr/local/etc/php/php.ini \
+RUN echo "extension=php_intl.dll" > /usr/local/etc/php/php.ini \
     && echo "max_input_vars=5000" >> /usr/local/etc/php/php.ini \
     && echo "[intl]" >>  /usr/local/etc/php/php.ini \
     && echo "intl.default_locale = en_utf8" >> /usr/local/etc/php/php.ini \
