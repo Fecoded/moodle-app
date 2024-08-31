@@ -2,7 +2,7 @@
 FROM php:8.1-apache
 
 # Install necessary extensions for Moodle
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install && apt-get install nano -y \
     libfreetype6-dev libjpeg62-turbo-dev libpng-dev libwebp-dev libzip-dev unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
     && docker-php-ext-install gd zip mysqli pdo pdo_mysql opcache
@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
 RUN a2enmod rewrite
 
 # Create a custom php.ini file
-RUN echo "extension=intl.so" > /usr/local/etc/php/php.ini \
+RUN echo "extension=intl" > /usr/local/etc/php/php.ini \
     && echo "max_input_vars=5000" >> /usr/local/etc/php/php.ini \
     && echo "[intl]" >>  /usr/local/etc/php/php.ini \
     && echo "intl.default_locale = en_utf8" >> /usr/local/etc/php/php.ini \
