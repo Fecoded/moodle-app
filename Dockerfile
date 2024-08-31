@@ -2,7 +2,7 @@
 FROM php:8.1-apache
 
 # Install necessary extensions for Moodle
-RUN apt-get update && apt-get install && apt-get install nano -y \
+RUN apt-get update && apt-get install && apt-get install nano && apt-get install php-soap && apt-get install php-intl -y \
     libfreetype6-dev libjpeg62-turbo-dev libpng-dev libwebp-dev libzip-dev unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
     && docker-php-ext-install gd zip mysqli pdo pdo_mysql opcache
@@ -15,7 +15,9 @@ RUN echo "extension=intl" > /usr/local/etc/php/php.ini \
     && echo "max_input_vars=5000" >> /usr/local/etc/php/php.ini \
     && echo "[intl]" >>  /usr/local/etc/php/php.ini \
     && echo "intl.default_locale = en_utf8" >> /usr/local/etc/php/php.ini \
-    && echo "intl.error_level = E_WARNING" >> /usr/local/etc/php/php.ini 
+    && echo "intl.error_level = E_WARNING" >> /usr/local/etc/php/php.ini \
+    && echo "extension=soap" >> /usr/local/etc/php/php.ini \
+    && echo "extension=exif" >> /usr/local/etc/php/php.ini
 
 # Set the working directory to /var/www/html
 WORKDIR /var/www/html
