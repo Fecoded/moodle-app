@@ -2,7 +2,7 @@
 FROM php:8.1-apache
 
 # Install necessary extensions for Moodle
-RUN apt-get update && apt-get install && apt-get install nano && apt-get install php-soap && apt-get install php-intl -y \
+RUN apt-get update && apt-get install && apt-get install nano -y \
     libfreetype6-dev libjpeg62-turbo-dev libpng-dev libwebp-dev libzip-dev unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
     && docker-php-ext-install gd zip mysqli pdo pdo_mysql opcache
