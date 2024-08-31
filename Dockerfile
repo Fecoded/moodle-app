@@ -5,7 +5,7 @@ FROM php:8.1-apache
 RUN apt-get update && apt-get install -y \
     libfreetype6-dev libjpeg62-turbo-dev libpng-dev libwebp-dev libzip-dev unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
-    && docker-php-ext-install gd zip mysqli pdo pdo_mysql opcache intl
+    && docker-php-ext-install gd zip mysqli pdo pdo_mysql opcache
 
 # Enable Apache mods
 RUN a2enmod rewrite
